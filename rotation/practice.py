@@ -25,7 +25,7 @@ tspan = np.linspace(0, 20000, 100)
 #Time to change/sample from initial conditions
 
 parameters_ic = {idx: p for idx, p in enumerate(model.parameters) if p in model.parameters_initial_conditions()[1:]} # this is the dictionary from model.parameters with index number and parameter for IC of each species
-samples = 4 # gives list of arrays for each simulation so you need to index them in the visualizations
+samples = 20000 # gives list of arrays for each simulation so you need to index them in the visualizations
 
 repeated_parameter_values = np.tile(pars1, (samples, 1)) # creating an array each row: set of initial conditions and columns: Parameters----This is where Oscar kept parameters by copy past and changed initial conditions
 for idx, par in parameters_ic.items():
@@ -45,10 +45,10 @@ for idx, par in parameters_ic.items():
 # DREAM sounds more efficient-uses particles with their own velocities that spend more time in minimas and therefore the minima may be directly related
 # So if Oscar ran 20K simulations and 4 past the cut-off, this is the parameter set. Remember our different initial conditions create the log distribution of species concentrations
 #Morkof Chain Monte Carlo refers to DREAM algorithm
-sim = ScipyOdeSimulator(model, tspan=tspan,param_values=repeated_parameter_values).run()
+# sim = ScipyOdeSimulator(model, tspan=tspan,param_values=repeated_parameter_values).run()
 
-#sim = CupSodaSimulator(model, tspan=tspan,param_values=repeated_parameter_values).run()
-
+sim = CupSodaSimulator(model, tspan=tspan,param_values=repeated_parameter_values).run()
+sim.save("EARM_Simulations.h5") #.h5 is HDF format for saving
 # After getting the simulation visualize using matplotlib and the observables.
 # Excersices: Find conditions under which the cell dies faster or slower relative to the 'wild type simulation"
 # show some visualizations
@@ -56,11 +56,11 @@ sim = ScipyOdeSimulator(model, tspan=tspan,param_values=repeated_parameter_value
 # distributions.
 
 #simres = ScipyOdeSimulator(model, tspan=tspan,param_values=pars1).run()
-yout = sim.all  #species and observables in numpy array or simres.dataframe (pandas dataframe) or simres.species (only species)
-pl.plot(tspan, yout[0]['cPARP'], label="cPARP")
-pl.plot(tspan, yout[1]['cPARP'], label="cPARP")
-pl.plot(tspan, yout[2]['cPARP'], label="cPARP")
-pl.plot(tspan, yout[3]['cPARP'], label="cPARP")
+# yout = sim.all  #species and observables in numpy array or simres.dataframe (pandas dataframe) or simres.species (only species)
+# pl.plot(tspan, yout[0]['cPARP'], label="cPARP")
+# pl.plot(tspan, yout[1]['cPARP'], label="cPARP")
+#pl.plot(tspan, yout[2]['cPARP'], label="cPARP")
+#pl.plot(tspan, yout[3]['cPARP'], label="cPARP")
 #pl.plot(tspan,yout['mBid'], label="mBid")
 ##pl.plot(tspan,yout[0]['aSmac'],label="aSmac")
 #pl.plot(tspan,yout[1]['aSmac'],label="aSmac")
@@ -70,5 +70,5 @@ pl.plot(tspan, yout[3]['cPARP'], label="cPARP")
 #pl.plot(tspan,yout[1]['CytoC_O'],label='CytoC')
 #pl.plot(tspan,yout[2]['CytoC_O'],label='CytoC')
 #pl.plot(tspan,yout[3]['CytoC_O'],label='CytoC')# must use refernce from npy array to add new observable
-pl.legend()
-pl.show()
+# pl.legend()
+# pl.show()
