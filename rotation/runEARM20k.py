@@ -2,7 +2,7 @@ from earm.lopez_embedded import model
 import numpy as np
 from pysb.simulator.scipyode import ScipyOdeSimulator
 from pysb.simulator.cupsoda import CupSodaSimulator
-#import matplotlib.pylab as pl
+# import matplotlib.pylab as pl
 from pysb import Observable
 from pysb.bng import generate_equations
 from IC_distributions_earm import sample_lognormal
@@ -11,7 +11,7 @@ from IC_distributions_earm import sample_lognormal
 #Observable('CytoC_O', CytoC(bf=None,state='C'))
 
 model.reset_equations()
-
+generate_equations()
 # This did not work: Observable('CytoC', model.species[65])
 
 # To change Parameter values (two ways)
