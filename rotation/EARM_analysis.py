@@ -1,7 +1,7 @@
 from time_death import *
 from pysb.simulator.base import SimulationResult
 import matplotlib.pyplot as plt
-import nump as np
+import numpy as np
 
 sim_result = SimulationResult.load('EARM_Simulations1k.h5')
 tspan = np.linspace(0, 20000, 100)
