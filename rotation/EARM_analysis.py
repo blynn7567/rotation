@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use('Agg')
 from time_death import *
 from pysb.simulator.base import SimulationResult
 import matplotlib.pyplot as plt
