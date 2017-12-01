@@ -2,7 +2,7 @@ from earm.lopez_embedded import model
 import numpy as np
 from pysb.simulator.scipyode import ScipyOdeSimulator
 from pysb.simulator.cupsoda import CupSodaSimulator
-import matplotlib.pylab as pl
+#import matplotlib.pylab as pl
 from pysb import Observable
 from pysb.bng import generate_equations
 from IC_distributions_earm import sample_lognormal
