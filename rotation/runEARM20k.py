@@ -47,6 +47,8 @@ for idx, par in parameters_ic.items():
 #Morkof Chain Monte Carlo refers to DREAM algorithm
 # sim = ScipyOdeSimulator(model, tspan=tspan,param_values=repeated_parameter_values).run()
 
+integrator_opt = {'rtol': 1e-6,'atol': 1e-6,'mxsteps': 20000}
+vol = 1e-19
 sim = CupSodaSimulator(model, tspan=tspan,param_values=repeated_parameter_values).run()
 sim.save("EARM_Simulations1k.h5") #.h5 is HDF format for saving
 # After getting the simulation visualize using matplotlib and the observables.
