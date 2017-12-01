@@ -8,13 +8,13 @@ import numpy as np
 sim_result = SimulationResult.load('EARM_Simulations1k.h5')
 tspan = np.linspace(0, 20000, 100)
 
-list_results = [0] * 1000
+list_results = []
 
 for sim_array in sim_result.observables:
     observable = sim_array['cPARP']
     xdata = tspan
-    functions = curve_fit(sig_apop(),'cPARP',xdata,sim_array)
-    list.append(list_results)
+    time_death = curve_fit(sig_apop,'cPARP',xdata,sim_array)
+    list_results.append(time_death)
 
 plt.hist(list_results,bin='auto')
 plt.title("Histogram Time of Death")
