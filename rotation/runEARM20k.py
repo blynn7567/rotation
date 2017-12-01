@@ -25,7 +25,7 @@ tspan = np.linspace(0, 20000, 100)
 #Time to change/sample from initial conditions
 
 parameters_ic = {idx: p for idx, p in enumerate(model.parameters) if p in model.parameters_initial_conditions()[1:]} # this is the dictionary from model.parameters with index number and parameter for IC of each species
-samples = 20000 # gives list of arrays for each simulation so you need to index them in the visualizations
+samples = 1000 # gives list of arrays for each simulation so you need to index them in the visualizations
 
 repeated_parameter_values = np.tile(pars1, (samples, 1)) # creating an array each row: set of initial conditions and columns: Parameters----This is where Oscar kept parameters by copy past and changed initial conditions
 for idx, par in parameters_ic.items():
@@ -48,7 +48,7 @@ for idx, par in parameters_ic.items():
 # sim = ScipyOdeSimulator(model, tspan=tspan,param_values=repeated_parameter_values).run()
 
 sim = CupSodaSimulator(model, tspan=tspan,param_values=repeated_parameter_values).run()
-sim.save("EARM_Simulations.h5") #.h5 is HDF format for saving
+sim.save("EARM_Simulations1k.h5") #.h5 is HDF format for saving
 # After getting the simulation visualize using matplotlib and the observables.
 # Excersices: Find conditions under which the cell dies faster or slower relative to the 'wild type simulation"
 # show some visualizations
