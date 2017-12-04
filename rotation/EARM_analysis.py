@@ -18,5 +18,5 @@ for sim_array in sim_result.observables:
 
 plt.hist(list_results,bins='auto')
 plt.title("Histogram Time of Death")
-plt.save('Histogram_1ksim_td')
+plt.savefig('Histogram_1ksim_td')
 
