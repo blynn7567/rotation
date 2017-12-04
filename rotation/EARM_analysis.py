@@ -5,7 +5,7 @@ from pysb.simulator.base import SimulationResult
 import matplotlib.pyplot as plt
 import numpy as np
 
-sim_result = SimulationResult.load('EARM_Simulations1k.h5')
+sim_result = SimulationResult.load('EARM_Simulations20k.h5')
 tspan = np.linspace(0, 20000, 100)
 
 list_results = []
@@ -18,5 +18,5 @@ for sim_array in sim_result.observables:
 
 plt.hist(list_results,bins='auto')
 plt.title("Histogram Time of Death")
-plt.savefig('Histogram_1ksim_td')
+plt.savefig('Histogram_20ksim_td')
 
