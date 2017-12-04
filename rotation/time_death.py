@@ -26,7 +26,11 @@ def curve_fit_ftn(functions, observable, xdata, ydata, **kwargs):
     if callable(functions):
         functions = [functions]
 
-    results[sim_array] = curve_fit(functions[sim_array], xdata, ydata[observable], p0=kwargs['p0'])[0]
+    if isinstance(species, int):
+        species = [species]
+    results = [0] * len(species)
+    for i, j in enumerate(species):
+        results[i] = curve_fit(functions[i], xdata, ydata[observable], p0=kwargs['p0'])[0]
     return results[0]
 
 
