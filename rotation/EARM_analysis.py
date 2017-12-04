@@ -16,6 +16,7 @@ for sim_array in sim_result.observables:
     observable = non_norm_observable/max_value
     xdata = tspan
     time_death = curve_fit_ftn(sig_apop,'cPARP',xdata,sim_array,**{'p0': [100, 100, 100]})
+    print (time_death)
     list_results.append(time_death)
 
 plt.hist(list_results,bins='auto')
