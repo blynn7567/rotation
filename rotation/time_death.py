@@ -26,7 +26,7 @@ def curve_fit_ftn(functions, observable, xdata, ydata, **kwargs):
     if callable(functions):
         functions = [functions]
 
-    results[i] = curve_fit(functions[i], xdata, ydata[observable], p0=kwargs['p0'])[0]
+    results[sim_array] = curve_fit(functions[sim_array], xdata, ydata[observable], p0=kwargs['p0'])[0]
     return results[0]
 
 
