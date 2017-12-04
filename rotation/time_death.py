@@ -1,7 +1,7 @@
 from scipy.optimize import curve_fit
 
 
-def curve_fit_ftn(functions, observable, xdata, ydata, **kwargs):
+def curve_fit_ftn(function, observable, xdata, ydata, **kwargs):
     """
     Fit simulation data to specific function
 
@@ -23,14 +23,8 @@ def curve_fit_ftn(functions, observable, xdata, ydata, **kwargs):
     Parameter values of the functions used to fit the data
 
     """
-    if callable(functions):
-        functions = [functions]
 
-    if isinstance(observable, int):
-        observable = [observable]
-    results = [0] * len(observable)
-    for i, j in enumerate(observable):
-        results[i] = curve_fit(functions[i], xdata, ydata[observable], p0=kwargs['p0'])[0]
+    results = curve_fit(function, xdata, ydata[observable], p0=kwargs['p0'])[0]
     return results[0]
 
 
