@@ -16,7 +16,9 @@ for sim_array in sim_result.observables:
     time_death = curve_fit_ftn(sig_apop,'cPARP',xdata,sim_array,**{'p0': [100, 100, 100]})
     list_results.append(time_death)
 
-plt.hist(list_results,bins='auto')
+time_death_filt = [x for x in list_results if x>0 and x<20000]
+print(time_death_filt)
+plt.hist(time_death_filt,bins=25)
 plt.title("Histogram Time of Death")
 plt.savefig('Histogram_20ksim_td')
 
