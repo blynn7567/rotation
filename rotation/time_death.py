@@ -1,6 +1,5 @@
 from scipy.optimize import curve_fit
 import numpy as np
-from EARM_analysis import *
 
 
 def curve_fit_ftn(function, observable, xdata, ydata, **kwargs):
