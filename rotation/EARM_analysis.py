@@ -13,7 +13,7 @@ list_results = []
 for sim_array in sim_result.observables:
     observable = sim_array['cPARP']
     xdata = tspan
-    time_death = curve_fit_ftn(sig_apop,'cPARP',xdata,sim_array)
+    time_death = curve_fit_ftn(sig_apop,'cPARP',xdata,sim_array,**{'p0': [100, 100, 100]})
     list_results.append(time_death)
 
 plt.hist(list_results,bin='auto')
