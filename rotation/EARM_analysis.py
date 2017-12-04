@@ -11,7 +11,9 @@ tspan = np.linspace(0, 20000, 100)
 list_results = []
 
 for sim_array in sim_result.observables:
-    observable = sim_array['cPARP']
+    non_norm_observable = sim_array['cPARP']
+    max_value = max(non_norm_observable)
+    observable = non_norm_observable/max_value
     xdata = tspan
     time_death = curve_fit_ftn(sig_apop,'cPARP',xdata,sim_array,**{'p0': [100, 100, 100]})
     list_results.append(time_death)
