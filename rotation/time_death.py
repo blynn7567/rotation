@@ -1,5 +1,6 @@
 from scipy.optimize import curve_fit
 import numpy as np
+from EARM_analysis import *
 
 
 def curve_fit_ftn(function, observable, xdata, ydata, **kwargs):
@@ -26,7 +27,7 @@ def curve_fit_ftn(function, observable, xdata, ydata, **kwargs):
     """
 
     results = curve_fit(function, xdata, ydata[observable], p0=kwargs['p0'])[0]
-    return results[0]
+    return results[1]
 
 
 def sig_apop(t, f, td, ts):
