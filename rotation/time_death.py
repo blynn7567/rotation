@@ -1,4 +1,5 @@
 from scipy.optimize import curve_fit
+import numpy as np
 
 
 def curve_fit_ftn(function, observable, xdata, ydata, **kwargs):
