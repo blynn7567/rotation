@@ -18,7 +18,7 @@ for sim_array in sim_result.observables:
 
 time_death_filt = [x for x in list_results if x>0 and x<20000]
 print(time_death_filt)
-plt.hist(time_death_filt,bins=150)
-plt.title("Histogram Time of Death")
+plt.hist(time_death_filt,bins=25)
+plt.title("Time of Death")
 plt.savefig('Histogram_20ksim12_5_td')
 
