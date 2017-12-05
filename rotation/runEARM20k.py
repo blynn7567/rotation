@@ -10,8 +10,7 @@ from IC_distributions_earm import sample_lognormal
 #CytoC = model.monomers['CytoC']
 #Observable('CytoC_O', CytoC(bf=None,state='C'))
 
-mBid = model.monomers['mBid']
-Bcl2 = model.monomers['Bcl2']
+
 #Observable('mBid',  Bid(state='M'))
 #Observable('aSmac', Smac(state='A'))
 #Observable('cPARP', PARP(state='C'))
