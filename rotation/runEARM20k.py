@@ -62,7 +62,7 @@ for idx, par in parameters_ic.items():
 integrator_opt = {'rtol': 1e-6,'atol': 1e-6,'mxsteps': 20000}
 vol = 1e-19
 sim = CupSodaSimulator(model, tspan=tspan,param_values=repeated_parameter_values).run()
-sim.save("EARM_Simulations20k.h5") #.h5 is HDF format for saving
+sim.save("EARM_Simulations20k12_5.h5") #.h5 is HDF format for saving
 # After getting the simulation visualize using matplotlib and the observables.
 # Excersices: Find conditions under which the cell dies faster or slower relative to the 'wild type simulation"
 # show some visualizations
