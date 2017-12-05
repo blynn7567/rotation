@@ -9,15 +9,18 @@ from IC_distributions_earm import sample_lognormal
 
 #CytoC = model.monomers['CytoC']
 #Observable('CytoC_O', CytoC(bf=None,state='C'))
-Observable('mBid',  Bid(state='M'))
-Observable('aSmac', Smac(state='A'))
-Observable('cPARP', PARP(state='C'))
-Observable('Bid', Bid(state='T'))
-Observable('Bid', Bid(state='U'))
-Observable('Bax', Bax(state='C'))
-Observable('Bax', Bax(state='M'))
-Observable('Bax', Bax(state='A'))
-Observable('Bcl2')
+
+mBid = model.monomers['mBid']
+Bcl2 = model.monomers['Bcl2']
+#Observable('mBid',  Bid(state='M'))
+#Observable('aSmac', Smac(state='A'))
+#Observable('cPARP', PARP(state='C'))
+#Observable('Bid', Bid(state='T'))
+#Observable('Bid', Bid(state='U'))
+#Observable('Bax', Bax(state='C'))
+#Observable('Bax', Bax(state='M'))
+#Observable('Bax', Bax(state='A'))
+#Observable('Bcl2')
 
 model.reset_equations()
 generate_equations(model)
