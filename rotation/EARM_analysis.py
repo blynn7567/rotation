@@ -5,7 +5,7 @@ from pysb.simulator.base import SimulationResult
 import matplotlib.pyplot as plt
 import numpy as np
 
-sim_result = SimulationResult.load('EARM_Simulations20k.h5')
+sim_result = SimulationResult.load('EARM_Simulations20k12_5.h5')
 tspan = np.linspace(0, 20000, 100)
 
 list_results = []
@@ -18,7 +18,7 @@ for sim_array in sim_result.observables:
 
 time_death_filt = [x for x in list_results if x>0 and x<20000]
 print(time_death_filt)
-plt.hist(time_death_filt,bins=25)
+plt.hist(time_death_filt,bins=150)
 plt.title("Histogram Time of Death")
-plt.savefig('Histogram_20ksim_td')
+plt.savefig('Histogram_20ksim12_5_td')
 
