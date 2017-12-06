@@ -18,14 +18,15 @@ for sim_array in sim_result.observables:
 
 #creating list of tuples for Td:parameter idx
 param_idx = list(range(1000))
-tuple_list = zip(list_results,param_idx)
+tuple_list = np.array(zip(list_results,param_idx))
 
 #time_death_filt = [x for x in list_results if x>0 and x<20000]
 #  907
-filter_set = list(range(20000))
-tuple_list_filt = [tup for tup in tuple_list if tup[0] in filter_set ]
+#filter_set = list(range(20000))
+#tuple_list_filt = [tup for tup in tuple_list if tup[0] in filter_set ]
 #tuple_list_filt.sort(key=lambda x: float(x[0]))
-tuple_list_filt.sort(key=float)
+tuple_list_filt = np.where(np.logical_and(tuple_list>=0,tuple-list<=20000))
+#tuple_list_filt.sort(key=float)
 slowest = tuple_list_filt[0:100]
 fastest = tuple_list_filt[807:907]
 
