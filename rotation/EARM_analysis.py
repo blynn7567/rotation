@@ -47,12 +47,39 @@ min_val_bid_slow = min(bid_ic_slow)
 max_val_bid_slow = max(bid_ic_slow)
 
 #graph ic bid:
-plt.hist(bid_ic_slow,bins=10)
-plt.xlabel('[bid]')
-plt.ylabel('density')
-plt.title("Slow Td: Initial Bid Concetrations")
-plt.savefig('Hist_bid_ic2')
+#plt.hist(bid_ic_slow,bins=10)
+#plt.xlabel('[bid]')
+#plt.ylabel('density')
+#plt.title("Slow Td: Initial Bid Concentrations")
+#plt.savefig('Hist_bid_ic2')
 
+# You typically want your plot to be ~1.33x wider than tall.
+# Common sizes: (10, 7.5) and (12, 9)
+plt.figure(figsize=(12, 9))
+
+# Remove the plot frame lines. They are unnecessary chartjunk.
+ax = plt.subplot(111)
+ax.spines["top"].set_visible(False)
+ax.spines["right"].set_visible(False)
+
+# Ensure that the axis ticks only show up on the bottom and left of the plot.
+# Ticks on the right and top of the plot are generally unnecessary chartjunk.
+ax.get_xaxis().tick_bottom()
+ax.get_yaxis().tick_left()
+
+# Make sure your axis ticks are large enough to be easily read.
+# You don't want your viewers squinting to read your plot.
+plt.xticks(fontsize=14)
+plt.yticks(range(5000, 30001, 5000), fontsize=14)
+
+# Along the same vein, make sure your axis labels are large
+# enough to be easily read as well. Make them slightly larger
+# than your axis tick labels so they stand out.
+plt.xlabel("molecules bid", fontsize=16)
+plt.ylabel("density", fontsize=16)
+plt.title("Slow Td: Initial Bid Concentrations")
+plt.hist(bid_ic_slow, color="#3F5D7D", bins=10)
+plt.savefig('Hist_bid_ictest')
 
 #For plotting td histogram
 #print(time_death_filt)
