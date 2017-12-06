@@ -17,7 +17,7 @@ for sim_array in sim_result.observables:
     list_results.append(time_death)
 
 #creating list of tuples for Td:parameter idx
-param_idx = list(range(999))
+param_idx = list(range(1001))
 tuple_list = zip(list_results,param_idx)
 
 #time_death_filt = [x for x in list_results if x>0 and x<20000]
