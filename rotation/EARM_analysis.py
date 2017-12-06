@@ -77,9 +77,9 @@ plt.yticks(range(5000, 30001, 5000), fontsize=14)
 # than your axis tick labels so they stand out.
 plt.xlabel("molecules Bcl2", fontsize=16)
 plt.ylabel("density", fontsize=16)
-plt.title("Fast Td: Initial Bcl2 Concentrations")
-plt.hist(bid_ic_fast, color="#3F5D7D", bins=10)
-plt.savefig('Hist_bcl2_icf')
+plt.title("Slow Td: Initial Bcl2 Concentrations")
+plt.hist(bid_ic_slow, color="#3F5D7D", bins=10)
+plt.savefig('Hist_bcl2_ics')
 
 #For plotting td histogram
 #print(time_death_filt)
