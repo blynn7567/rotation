@@ -37,8 +37,8 @@ sim_par = np.load('par_dist.npy')
 fetched_params_slow = [sim_par[i] for i in slow_idx]
 fetched_params_fast = [sim_par[i] for i in fast_idx]
 
-bid_ic_fast = [item[55] for item in fetched_params_fast]
-bid_ic_slow = [item[55] for item in fetched_params_slow]
+bid_ic_fast = [item[58] for item in fetched_params_fast]
+bid_ic_slow = [item[58] for item in fetched_params_slow]
 mean_bid_fast = sum(bid_ic_fast)/ float(len(bid_ic_fast))
 mean_bid_slow = sum(bid_ic_slow)/ float(len(bid_ic_slow))
 min_val_bid_fast = min(bid_ic_fast)
@@ -75,11 +75,11 @@ plt.yticks(range(5000, 30001, 5000), fontsize=14)
 # Along the same vein, make sure your axis labels are large
 # enough to be easily read as well. Make them slightly larger
 # than your axis tick labels so they stand out.
-plt.xlabel("molecules bid", fontsize=16)
+plt.xlabel("molecules Bcl2", fontsize=16)
 plt.ylabel("density", fontsize=16)
-plt.title("Fast Td: Initial Bid Concentrations")
+plt.title("Fast Td: Initial Bcl2 Concentrations")
 plt.hist(bid_ic_fast, color="#3F5D7D", bins=10)
-plt.savefig('Hist_bid_ic3')
+plt.savefig('Hist_bcl2_icf')
 
 #For plotting td histogram
 #print(time_death_filt)
