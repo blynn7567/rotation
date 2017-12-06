@@ -51,7 +51,7 @@ plt.hist(bid_ic_fast,bins=10)
 plt.xlabel('[bid]')
 plt.ylabel('density')
 plt.title("Fast Td: Initial Bid Concetrations")
-
+plt.savefig('Hist_bid_ic')
 
 
 #For plotting td histogram
