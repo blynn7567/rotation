@@ -48,8 +48,8 @@ max_val_bid_slow = max(bid_ic_slow)
 
 #graph ic bid:
 plt.hist(bid_ic_fast,bins=10)
-plt.xlabel([bid])
-plt.ylabel(density)
+plt.xlabel('[bid]')
+plt.ylabel('density')
 plt.title("Fast Td: Initial Bid Concetrations")
 
 
