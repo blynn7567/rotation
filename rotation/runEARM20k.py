@@ -26,14 +26,14 @@ tspan = np.linspace(0, 20000, 100)
 
 parameters_ic = {idx: p for idx, p in enumerate(model.parameters) if p in model.parameters_initial_conditions()[1:]}
 # this is the dictionary from model.parameters with index number and parameter for IC of each species
-samples = 1000 # gives list of arrays for each simulation so you need to index them in the visualizations
+samples = 20000 # gives list of arrays for each simulation so you need to index them in the visualizations
 
 repeated_parameter_values = np.tile(pars1, (samples, 1))
 # creating an array each row: set of initial conditions and columns: Parameters
 # ----This is where Oscar kept parameters by copy paste and changed initial conditions
 for idx, par in parameters_ic.items():
     repeated_parameter_values[:, idx] = sample_lognormal(par, size=samples)
-np.save('par_dist.npy',repeated_parameter_values)
+np.save('par_dist_scaled.npy',repeated_parameter_values)
 # can sample from many different initial conditions defined by mean and coefficient of variance.
 # We know these proteins have a log normal distribution
 # If you want to change the initial conditions you can change it in two different ways:
@@ -63,7 +63,7 @@ integrator_opt = {'rtol': 1e-6,'atol': 1e-6,'mxsteps': 20000}
 vol = 1e-19
 sim = CupSodaSimulator(model, tspan=tspan,param_values=repeated_parameter_values,obs_species_only=False).run()
 #obs species= F lets us look at concentrations of everything after run
-sim.save("EARM_Simulations12_6.h5") #.h5 is HDF format for saving
+sim.save("EARM_Simulations12_6_scaled.h5") #.h5 is HDF format for saving
 # After getting the simulation visualize using matplotlib and the observables.
 # Excersices: Find conditions under which the cell dies faster or slower relative to the 'wild type simulation"
 # show some visualizations
