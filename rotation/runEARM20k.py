@@ -61,7 +61,7 @@ np.save('par_dist_scaled.npy',repeated_parameter_values)
 
 integrator_opt = {'rtol': 1e-6,'atol': 1e-6,'mxsteps': 20000}
 vol = 1e-19
-sim = CupSodaSimulator(model, tspan=tspan,param_values=repeated_parameter_values,obs_species_only=False).run()
+sim = CupSodaSimulator(model, tspan=tspan,param_values=repeated_parameter_values).run()
 #obs species= F lets us look at concentrations of everything after run
 sim.save("EARM_Simulations12_6_scaled.h5") #.h5 is HDF format for saving
 # After getting the simulation visualize using matplotlib and the observables.
