@@ -37,7 +37,7 @@ sim_par = np.load('par_dist_scaled.npy')
 fetched_params_slow = [sim_par[i] for i in slow_idx]
 fetched_params_fast = [sim_par[i] for i in fast_idx]
 
-#Graphing Caspase-8 fast/slow first:
+#Graphing Bid fast/slow first:
 bid_ic_fast = [item[55] for item in fetched_params_fast]
 bid_ic_slow = [item[55] for item in fetched_params_slow]
 mean_bid_fast = sum(bid_ic_fast)/ float(len(bid_ic_fast))
@@ -46,8 +46,8 @@ min_val_bid_fast = min(bid_ic_fast)
 max_val_bid_fast = max(bid_ic_fast)
 min_val_bid_slow = min(bid_ic_slow)
 max_val_bid_slow = max(bid_ic_slow)
-sd_bid_fast = stdev(bid_ic_fast)
-sd_bid_slow = stdev(bid_ic_slow)
+sd_bid_fast = np.std(bid_ic_fast)
+sd_bid_slow = np.std(bid_ic_slow)
 
 xmin = min(min_val_bid_fast,min_val_bid_slow) # choosing automatic xaxis ranges based off of parsing
 xmax = max(max_val_bid_fast,max_val_bid_slow)
@@ -76,8 +76,8 @@ min_val_bak_fast = min(bak_ic_fast)
 max_val_bak_fast = max(bak_ic_fast)
 min_val_bak_slow = min(bak_ic_slow)
 max_val_bak_slow = max(bak_ic_slow)
-sd_bak_fast = stdev(bak_ic_fast)
-sd_bak_slow = stdev(bak_ic_slow)
+sd_bak_fast = np.std(bak_ic_fast)
+sd_bak_slow = np.std(bak_ic_slow)
 
 
 xmin = min(min_val_bak_fast,min_val_bak_slow) # choosing automatic xaxis ranges based off of parsing
@@ -107,8 +107,8 @@ min_val_mcl1_fast = min(mcl1_ic_fast)
 max_val_mcl1_fast = max(mcl1_ic_fast)
 min_val_mcl1_slow = min(mcl1_ic_slow)
 max_val_mcl1_slow = max(mcl1_ic_slow)
-sd_mcl1_fast = stdev(mcl1_ic_fast)
-sd_mcl1_slow = stdev(mcl1_ic_slow)
+sd_mcl1_fast = np.std(mcl1_ic_fast)
+sd_mcl1_slow = np.std(mcl1_ic_slow)
 
 xmin = min(min_val_mcl1_fast,min_val_mcl1_slow) # choosing automatic xaxis ranges based off of parsing
 xmax = max(max_val_mcl1_fast,max_val_mcl1_slow)
@@ -137,8 +137,8 @@ min_val_c3_fast = min(c3_ic_fast)
 max_val_c3_fast = max(c3_ic_fast)
 min_val_c3_slow = min(c3_ic_slow)
 max_val_c3_slow = max(c3_ic_slow)
-sd_c3_fast = stdev(c3_ic_fast)
-sd_c3_slow = stdev(c3_ic_slow)
+sd_c3_fast = np.std(c3_ic_fast)
+sd_c3_slow = np.std(c3_ic_slow)
 
 xmin = min(min_val_c3_fast,min_val_c3_slow) # choosing automatic xaxis ranges based off of parsing
 xmax = max(max_val_c3_fast,max_val_c3_slow)
@@ -167,8 +167,8 @@ min_val_c6_fast = min(c6_ic_fast)
 max_val_c6_fast = max(c6_ic_fast)
 min_val_c6_slow = min(c6_ic_slow)
 max_val_c6_slow = max(c6_ic_slow)
-sd_c6_fast = stdev(c6_ic_fast)
-sd_c6_slow = stdev(c6_ic_slow)
+sd_c6_fast = np.std(c6_ic_fast)
+sd_c6_slow = np.std(c6_ic_slow)
 
 xmin = min(min_val_c6_fast,min_val_c6_slow) # choosing automatic xaxis ranges based off of parsing
 xmax = max(max_val_c6_fast,max_val_c6_slow)
@@ -197,8 +197,8 @@ min_val_flip_fast = min(flip_ic_fast)
 max_val_flip_fast = max(flip_ic_fast)
 min_val_flip_slow = min(flip_ic_slow)
 max_val_flip_slow = max(flip_ic_slow)
-sd_flip_fast = stdev(flip_ic_fast)
-sd_flip_slow = stdev(flip_ic_slow)
+sd_flip_fast = np.std(flip_ic_fast)
+sd_flip_slow = np.std(flip_ic_slow)
 
 xmin = min(min_val_flip_fast,min_val_flip_slow) # choosing automatic xaxis ranges based off of parsing
 xmax = max(max_val_flip_fast,max_val_flip_slow)
@@ -227,8 +227,8 @@ min_val_bclxl_fast = min(bclxl_ic_fast)
 max_val_bclxl_fast = max(bclxl_ic_fast)
 min_val_bclxl_slow = min(bclxl_ic_slow)
 max_val_bclxl_slow = max(bclxl_ic_slow)
-sd_bclxl_fast = stdev(bclxl_ic_fast)
-sd_bclxl_slow = stdev(bclxl_ic_slow)
+sd_bclxl_fast = np.std(bclxl_ic_fast)
+sd_bclxl_slow = np.std(bclxl_ic_slow)
 
 xmin = min(min_val_bclxl_fast,min_val_bclxl_slow) # choosing automatic xaxis ranges based off of parsing
 xmax = max(max_val_bclxl_fast,max_val_bclxl_slow)
@@ -257,8 +257,8 @@ min_val_ligand_fast = min(ligand_ic_fast)
 max_val_ligand_fast = max(ligand_ic_fast)
 min_val_ligand_slow = min(ligand_ic_slow)
 max_val_ligand_slow = max(ligand_ic_slow)
-sd_ligand_fast = stdev(ligand_ic_fast)
-sd_ligand_slow = stdev(ligand_ic_slow)
+sd_ligand_fast = np.std(ligand_ic_fast)
+sd_ligand_slow = np.std(ligand_ic_slow)
 
 xmin = min(min_val_ligand_fast,min_val_ligand_slow) # choosing automatic xaxis ranges based off of parsing
 xmax = max(max_val_ligand_fast,max_val_ligand_slow)
@@ -287,8 +287,8 @@ min_val_receptor_fast = min(receptor_ic_fast)
 max_val_receptor_fast = max(receptor_ic_fast)
 min_val_receptor_slow = min(receptor_ic_slow)
 max_val_receptor_slow = max(receptor_ic_slow)
-sd_receptor_fast = stdev(receptor_ic_fast)
-sd_receptor_slow = stdev(receptor_ic_slow)
+sd_receptor_fast = np.std(receptor_ic_fast)
+sd_receptor_slow = np.std(receptor_ic_slow)
 
 xmin = min(min_val_receptor_fast,min_val_receptor_slow) # choosing automatic xaxis ranges based off of parsing
 xmax = max(max_val_receptor_fast,max_val_receptor_slow)
@@ -317,8 +317,8 @@ min_val_bar_fast = min(bar_ic_fast)
 max_val_bar_fast = max(bar_ic_fast)
 min_val_bar_slow = min(bar_ic_slow)
 max_val_bar_slow = max(bar_ic_slow)
-sd_bar_fast = stdev(bar_ic_fast)
-sd_bar_slow = stdev(bar_ic_slow)
+sd_bar_fast = np.std(bar_ic_fast)
+sd_bar_slow = np.std(bar_ic_slow)
 
 xmin = min(min_val_bar_fast,min_val_bar_slow) # choosing automatic xaxis ranges based off of parsing
 xmax = max(max_val_bar_fast,max_val_bar_slow)
@@ -347,8 +347,8 @@ min_val_apaf_fast = min(apaf_ic_fast)
 max_val_apaf_fast = max(apaf_ic_fast)
 min_val_apaf_slow = min(apaf_ic_slow)
 max_val_apaf_slow = max(apaf_ic_slow)
-sd_apaf_fast = stdev(apaf_ic_fast)
-sd_apaf_slow = stdev(apaf_ic_slow)
+sd_apaf_fast = np.std(apaf_ic_fast)
+sd_apaf_slow = np.std(apaf_ic_slow)
 
 xmin = min(min_val_apaf_fast,min_val_apaf_slow) # choosing automatic xaxis ranges based off of parsing
 xmax = max(max_val_apaf_fast,max_val_apaf_slow)
@@ -377,8 +377,8 @@ min_val_xiap_fast = min(xiap_ic_fast)
 max_val_xiap_fast = max(xiap_ic_fast)
 min_val_xiap_slow = min(xiap_ic_slow)
 max_val_xiap_slow = max(xiap_ic_slow)
-sd_xiap_fast = stdev(xiap_ic_fast)
-sd_xiap_slow = stdev(xiap_ic_slow)
+sd_xiap_fast = np.std(xiap_ic_fast)
+sd_xiap_slow = np.std(xiap_ic_slow)
 
 xmin = min(min_val_xiap_fast,min_val_xiap_slow) # choosing automatic xaxis ranges based off of parsing
 xmax = max(max_val_xiap_fast,max_val_xiap_slow)
@@ -407,8 +407,8 @@ min_val_parp_fast = min(parp_ic_fast)
 max_val_parp_fast = max(parp_ic_fast)
 min_val_parp_slow = min(parp_ic_slow)
 max_val_parp_slow = max(parp_ic_slow)
-sd_parp_fast = stdev(parp_ic_fast)
-sd_parp_slow = stdev(parp_ic_slow)
+sd_parp_fast = np.std(parp_ic_fast)
+sd_parp_slow = np.std(parp_ic_slow)
 
 xmin = min(min_val_parp_fast,min_val_parp_slow) # choosing automatic xaxis ranges based off of parsing
 xmax = max(max_val_parp_fast,max_val_parp_slow)
@@ -437,8 +437,8 @@ min_val_c8_fast = min(c8_ic_fast)
 max_val_c8_fast = max(c8_ic_fast)
 min_val_c8_slow = min(c8_ic_slow)
 max_val_c8_slow = max(c8_ic_slow)
-sd_c8_fast = stdev(c8_ic_fast)
-sd_c8_slow = stdev(c8_ic_slow)
+sd_c8_fast = np.std(c8_ic_fast)
+sd_c8_slow = np.std(c8_ic_slow)
 
 xmin = min(min_val_c8_fast,min_val_c8_slow) # choosing automatic xaxis ranges based off of parsing
 xmax = max(max_val_c8_fast,max_val_c8_slow)
